@@ -52,22 +52,15 @@ namespace NAIVE {
 		}
 		time.stop();
 
-		//time.stop();
-		if (output) cout << "PARALLEL_primesDivide: " << time.get() << endl;
+		if (output) cout << "NAIVE PARALLEL_primesDivide: " << time.get() << endl;
 
 		return results;
 	}
 }
 
-namespace BETTER {
-	vector<int> PARALLEL_primesDivide(int a, int b, bool output = true) {
-		return vector<int>();
-	}
-}
-
 namespace BEST {
 	vector<int> PARALLEL_primesDivide(int a, int b, bool output = true) {
-		//Time time;
+		Time time;
 		vector<int> results;
 		results.reserve(b - a + 1);
 
@@ -78,7 +71,6 @@ namespace BEST {
 			privateResults[i].reserve(b - a + 1);
 		}
 
-		Time time;
 #pragma omp parallel
 		{
 
@@ -89,14 +81,13 @@ namespace BEST {
 				}
 			}
 		}
-		time.stop();
-
+		
 		for (int i = 0; i < threadsCount; i++) {
 			results.insert(results.end(), privateResults[i].begin(), privateResults[i].end());
 		}
 
-		//time.stop();
-		if (output) cout << "PARALLEL_primesDivide: " << time.get() << endl;
+		time.stop();
+		if (output) cout << "BEST PARALLEL_primesDivide: " << time.get() << endl;
 
 		return results;
 	}

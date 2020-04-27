@@ -146,6 +146,16 @@
      <recursive type="bool">true</recursive>
      <priority type="bool">true</priority>
     </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x64</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
    </searchCategory>
    <searchCategory>
     <category type="u8_t">2</category>
@@ -232,13 +242,32 @@
      <recursive type="bool">true</recursive>
      <priority type="bool">true</priority>
     </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\atlmfc\src\atl</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\crt\src</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
+    <searchDirectory>
+     <name>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\atlmfc\include</name>
+     <recursive type="bool">true</recursive>
+     <priority type="bool">true</priority>
+    </searchDirectory>
    </searchCategory>
    <searchCategory>
     <category type="u8_t">4</category>
    </searchCategory>
   </searchDirs>
  </vs_search_dirs>
- <contextValues type="bag"/>
  <All_Configurations-All_Platforms>
   <target_settings>
    <selected_workload>
@@ -391,4 +420,5 @@
    </localhost>
   </analysis_type_settings>
  </All_Configurations-All_Platforms>
+ <contextValues type="bag"/>
 </root>

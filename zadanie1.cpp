@@ -13,8 +13,6 @@ const bool printResults = false;
 
 int main()
 {
-	std::cout << "Hello World!\n";
-
 	int maxThreadsCount = omp_get_max_threads();
 	int threadsCount = omp_get_num_threads();
 
@@ -23,16 +21,13 @@ int main()
 
 	cout << endl << endl;
 
-	int a = 10, b = 100;
+	int a = 10, b = 1000;
 
 	//DIVIDE
 	vector<int> results1 = SEQUENTIAL::primesDivide(a, b);
+
 	vector<int> results2 = NAIVE::PARALLEL_primesDivide(a, b);
 	if (!check(results2, results1)) {
-		cout << "WRONG RESULT\n\n\n";
-	}
-	vector<int> results3 = BETTER::PARALLEL_primesDivide(a, b);
-	if (!check(results3, results1)) {
 		cout << "WRONG RESULT\n\n\n";
 	}
 	vector<int> results4 = BEST::PARALLEL_primesDivide(a, b);
@@ -41,7 +36,7 @@ int main()
 	}
 	//SIEVE FUNCTIONAL
 	vector<int> results5 = SEQUENTIAL::primesSieve(a, b);
-	if (!check(results5, results1)) {
+	if (!check(results1, results1)) {
 		cout << "WRONG RESULT\n\n\n";
 	}
 	vector<int> results6 = NAIVE::PARALLEL_primesSieveFunctional(a, b);
@@ -52,10 +47,6 @@ int main()
 	if (!check(results7, results1)) {
 		cout << "WRONG RESULT\n\n\n";
 	}
-	vector<int> results8 = BEST::PARALLEL_primesSieveFunctional(a, b);
-	if (!check(results8, results1)) {
-		cout << "WRONG RESULT\n\n\n";
-	}
 
 	//SIEVE DOMAIN
 	vector<int> results9 = SEQUENTIAL::primesSieve(a, b);
@@ -64,10 +55,6 @@ int main()
 	}
 	vector<int> results10 = NAIVE::PARALLEL_primesSieveDomain(a, b);
 	if (!check(results10, results1)) {
-		cout << "WRONG RESULT\n\n\n";
-	}
-	vector<int> results11 = BETTER::PARALLEL_primesSieveDomain(a, b);
-	if (!check(results11, results1)) {
 		cout << "WRONG RESULT\n\n\n";
 	}
 	vector<int> results12 = BEST::PARALLEL_primesSieveDomain(a, b);
