@@ -21,42 +21,59 @@ int main()
 	cout << "maxThreadsCount = " << maxThreadsCount << '\n';
 	cout << "threadsCount = " << threadsCount << '\n';
 
-	cout << getStart(10, 50, 5, 6) << endl;
-	cout << getEnd(10, 50, 4, 6) << endl;
-
-
 	cout << endl << endl;
 
+	int a = 10, b = 100;
 
-	int a = 10, b = 1000000000;
-
-	//results = primesDivide(a, b);
-	//print(results);
-
-	//results = PARALLEL_primesDivide(a, b);
-	//print(results);
-
-	//while (true) {
-	vector<int> results1 = SEQUENTIAL::primesSieve(a, b);
-	if(printResults)
-	print(results1);
-
-	vector<int> results2 = BEST::PARALLEL_primesSieveDomain(a, b);
-	if (printResults)
-	print(results2);
-
-	vector<int> results3 = BEST::PARALLEL_primesSieveFunctional(a, b);
-	if (printResults)
-	print(results3);
-
-	if (!check(results1, results2) || !check(results2, results3)) {
-		cout << "\nFATAL ERROR\nFATAL ERROR\nFATAL ERROR\n";
+	//DIVIDE
+	vector<int> results1 = SEQUENTIAL::primesDivide(a, b);
+	vector<int> results2 = NAIVE::PARALLEL_primesDivide(a, b);
+	if (!check(results2, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results3 = BETTER::PARALLEL_primesDivide(a, b);
+	if (!check(results3, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results4 = BEST::PARALLEL_primesDivide(a, b);
+	if (!check(results4, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	//SIEVE FUNCTIONAL
+	vector<int> results5 = SEQUENTIAL::primesSieve(a, b);
+	if (!check(results5, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results6 = NAIVE::PARALLEL_primesSieveFunctional(a, b);
+	if (!check(results6, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results7 = BETTER::PARALLEL_primesSieveFunctional(a, b);
+	if (!check(results7, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results8 = BEST::PARALLEL_primesSieveFunctional(a, b);
+	if (!check(results8, results1)) {
+		cout << "WRONG RESULT\n\n\n";
 	}
 
-		b *= 10;
-
-		cout << endl << endl;
-	//}
+	//SIEVE DOMAIN
+	vector<int> results9 = SEQUENTIAL::primesSieve(a, b);
+	if (!check(results9, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results10 = NAIVE::PARALLEL_primesSieveDomain(a, b);
+	if (!check(results10, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results11 = BETTER::PARALLEL_primesSieveDomain(a, b);
+	if (!check(results11, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
+	vector<int> results12 = BEST::PARALLEL_primesSieveDomain(a, b);
+	if (!check(results12, results1)) {
+		cout << "WRONG RESULT\n\n\n";
+	}
 
 	return 0;
 }

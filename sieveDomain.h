@@ -2,7 +2,44 @@
 
 namespace NAIVE {
 	vector<int> PARALLEL_primesSieveDomain(int a, int b) {
-		return vector<int>();
+		//Time time;
+		int upperBound = int(sqrt(b));
+		vector<int> firstPrimes = BEST::PARALLEL_primesDivide(2, upperBound, false);
+
+		CHECK* checked = new CHECK[b + 1]{ false };
+
+		Time time;
+#pragma omp parallel
+		{
+#pragma omp for
+			for (int i = 0; i < firstPrimes.size(); i++) {
+				int multiplicity = firstPrimes[i] * 2;
+
+				while (multiplicity <= b) {
+					checked[multiplicity] = true;
+					
+					multiplicity += firstPrimes[i];
+				}
+			}
+		}
+		time.stop();
+
+		vector<int> primes;
+		primes.reserve(b - a + 1);
+
+		for (int i = a; i <= b; i++) {
+			if (!checked[i]) {
+				primes.push_back(i);
+			}
+		}
+
+		//time.stop();
+
+		cout << "PARALLEL_primesSieveDomain: " << time.get() << endl;
+
+		delete[] checked;
+
+		return primes;
 	}
 }
 

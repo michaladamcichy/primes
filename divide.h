@@ -37,7 +37,25 @@ namespace SEQUENTIAL {
 
 namespace NAIVE {
 	vector<int> PARALLEL_primesDivide(int a, int b, bool output = true) {
-		return vector<int>();
+		Time time;
+		vector<int> results;
+		results.reserve(b - a + 1);
+
+#pragma omp parallel
+		{
+#pragma omp for
+			for (int i = a; i <= b; i++) {
+				if (isPrime(i)) { 
+					results.push_back(i);
+				}
+			}
+		}
+		time.stop();
+
+		//time.stop();
+		if (output) cout << "PARALLEL_primesDivide: " << time.get() << endl;
+
+		return results;
 	}
 }
 

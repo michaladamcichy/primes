@@ -2,19 +2,6 @@
 
 namespace NAIVE {
 	vector<int> PARALLEL_primesSieveFunctional(int a, int b) {
-		return vector<int>();
-	}
-}
-
-namespace BETTER {
-	vector<int> PARALLEL_primesSieveFunctional(int a, int b) {
-		return vector<int>();
-	}
-}
-
-
-namespace BEST {
-	vector<int> PARALLEL_primesSieveFunctional(int a, int b) {
 		//Time time;
 		int upperBound = int(sqrt(b));
 		vector<int> firstPrimes = BEST::PARALLEL_primesDivide(2, upperBound, false);
@@ -56,5 +43,18 @@ namespace BEST {
 		delete[] checked;
 
 		return primes;
+		return vector<int>();
+	}
+}
+
+namespace BETTER {
+	vector<int> PARALLEL_primesSieveFunctional(int a, int b) {
+		return vector<int>();
+	}
+}
+
+namespace BEST {
+	vector<int> PARALLEL_primesSieveFunctional(int a, int b) {
+		return vector<int>();
 	}
 }
