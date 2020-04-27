@@ -1,0 +1,4 @@
+﻿  zadanie1.cpp
+  c1xx: error C2338: two-phase name lookup is not supported for C++/CLI, C++/CX, or OpenMP; use /Zc:twoPhase-
+  c1xx: fatal error C1903: unable to recover from previous error(s); stopping compilation
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): error MSB6006: "CL.exe" exited with code 2.
