@@ -1,7 +1,8 @@
 ﻿  zadanie1.cpp
+C:\Users\BijBolszewika\source\repos\zadanie1\sieveDomain.h(95,25): warning C4805: '|=': unsafe mix of type 'int' and type 'CHECK' in operation
   Generating code
-  6 of 110 functions ( 5.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  113 of 167 functions (67.7%) were compiled, the rest were copied from previous compilation.
+    5 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   zadanie1.vcxproj -> C:\Users\BijBolszewika\source\repos\zadanie1\x64\Release\zadanie1.exe

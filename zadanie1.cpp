@@ -37,15 +37,15 @@ int main()
 	//print(results);
 
 	//while (true) {
-	vector<int> results1 = primesSieve(a, b);
+	vector<int> results1 = SEQUENTIAL::primesSieve(a, b);
 	if(printResults)
 	print(results1);
 
-	vector<int> results2 = PARALLEL_primesSieveDomain(a, b);
+	vector<int> results2 = BEST::PARALLEL_primesSieveDomain(a, b);
 	if (printResults)
 	print(results2);
 
-	vector<int> results3 = PARALLEL_primesSieveFunctional(a, b);
+	vector<int> results3 = BEST::PARALLEL_primesSieveFunctional(a, b);
 	if (printResults)
 	print(results3);
 
